@@ -18,7 +18,7 @@ RCT_EXPORT_METHOD(encodeDic:(NSString *)algorithmByName
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject )
 {
-    NSString * json = [RNJwtToken jsonStringWith:payload andPrettyPrint:NO];
+    NSString * json = [ODJsonWebToken jsonStringWith:payload andPrettyPrint:NO];
     [self encode:algorithmByName payloadJson:json secret:secret resolver:resolve rejecter:reject];
 }
 
@@ -28,7 +28,7 @@ RCT_EXPORT_METHOD(encodeArray:(NSString *)algorithmByName
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject )
 {
-    NSString * json = [RNJwtToken jsonStringWith:payload andPrettyPrint:NO];
+    NSString * json = [ODJsonWebToken jsonStringWith:payload andPrettyPrint:NO];
     [self encode:algorithmByName payloadJson:json secret:secret resolver:resolve rejecter:reject];
 }
 
