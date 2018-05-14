@@ -41,7 +41,30 @@ Hard fork of https://www.npmjs.com/package/react-native-jwt-token
 ```javascript
 import ODJsonWebToken from 'react-native-json-web-token';
 
-// TODO: What to do with the module?
-ODJsonWebToken;
+const payload = [
+      {
+        key: 'identity',
+        value: [
+          { key: 'first_name', value: '' },
+          { key: 'last_name', value: '' },
+        ],
+      },
+      {
+        key: 'context',
+        value: [
+          { key: 'app_name', value: 'my_app' },
+        ],
+      },
+    ];
+    ODJsonWebToken.encodeArray(
+      'HS256',
+      payload,
+      'MySecretToken'
+    ).then(jwtData => {
+		  console.warn('result:', jwtData)
+      })
+      .catch(err =>
+        console.warn('error:', err)
+      );
 ```
   
