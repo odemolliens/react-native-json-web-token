@@ -66,6 +66,11 @@ public class ODJsonWebTokenModule extends ReactContextBaseJavaModule {
 
     }
 
+    @ReactMethod
+    public void encodeJSONString(String algorithmByName, String payload, String secret, Promise promise) {
+        this.encode(algorithmByName, payload, secret, promise);
+    }
+
     private void encode(String algorithmByName, String finalPayload, String secret, Promise promise) {
         String header = "{\"typ\":\"JWT\",\"alg\":\"" + algorithmByName + "\"}";
         String headerEncode = this.encode(header);

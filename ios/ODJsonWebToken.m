@@ -22,6 +22,15 @@ RCT_EXPORT_METHOD(encodeDic:(NSString *)algorithmByName
     [self encode:algorithmByName payloadJson:json secret:secret resolver:resolve rejecter:reject];
 }
 
+RCT_EXPORT_METHOD(encodeJSONString:(NSString *)algorithmByName
+                  payload:(NSString *)payload
+                  secret:(NSString *)secret
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject )
+{
+    [self encode:algorithmByName payloadJson:payload secret:secret resolver:resolve rejecter:reject];
+}
+
 RCT_EXPORT_METHOD(encodeArray:(NSString *)algorithmByName
                   payload:(NSArray *)payload
                   secret:(NSString *)secret
